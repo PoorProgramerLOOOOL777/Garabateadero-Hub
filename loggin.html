@@ -91,7 +91,15 @@
       .card { padding: 32px 24px; }
       h1 { font-size: 27px; }
     }
-  </style>
+  
+/* Botones de acceso a los 3 archivos */
+.pages{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.page-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 15px;border:1px solid rgba(140,140,175,.38);border-radius:10px;background:rgba(140,140,175,.14);color:inherit;font:inherit;font-size:13px;font-weight:700;text-decoration:none;transition:transform .18s,border-color .18s,background .18s}
+.page-btn:hover{transform:translateY(-2px);border-color:#8c7bff;background:rgba(140,123,255,.22)}
+.page-btn[aria-current=page]{border-color:#65d4c8;background:rgba(101,212,200,.16)}
+.page-btn:focus-visible{outline:3px solid #65d4c8;outline-offset:3px}
+.card .pages{justify-content:center;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}.card .page-btn{flex:1 1 auto;justify-content:center;min-height:38px;padding:0 10px;font-size:12px}
+</style>
 </head>
 <body>
   <main class="card">
@@ -109,7 +117,7 @@
       <button type="submit">Entrar</button>
     </form>
     <p class="note">Pulsa “Entrar” para continuar.</p>
-  </main>
+  <nav class="pages" aria-label="Archivos del sitio"><a class="page-btn" href="index.html" title="index.html">✳ Lienzo</a><a class="page-btn" href="configuraciones.html" title="configuraciones.html">⚙ Configuraciones</a><a class="page-btn" href="loggin.html" title="loggin.html" aria-current="page">→ Iniciar sesión</a></nav></main>
 
   <script>
     document.getElementById("login-form").addEventListener("submit", (event) => {
